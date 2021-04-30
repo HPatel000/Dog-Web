@@ -13,13 +13,32 @@
   </head>
   <body>
     <h1>DOG WEB</h1>
-    <h3>Get Dog🐶 Breed from the image</h3>
+    <h3>Know the Dog🐶 Breed from the image</h3>
+    <img id="uploadPreview" />
+    <h3 id="prediction_label">{{prediction}}</h3>
     <form action="/" method="post" enctype="multipart/form-data">
-      <input type="file" name="dogImg" id="dogImg" />
+      <div>
+        Choose Image
+        <input
+          type="file"
+          name="dogImg"
+          id="dogImg"
+          class="hide_file"
+          onchange="PreviewImage()"
+        />
+      </div>
       <br />
-      <input type="submit" value="Make Prediction!" />
+      <input type="submit" value="Make Prediction!" class="btn" />
     </form>
-    <h1>{{prediction}}</h1>
-    <script src="{{ url_for('static', filename='index.js')}}"></script>
+    <script type="text/javascript">
+      function PreviewImage() {
+        document.getElementById('prediction_label').innerText = ''
+        var oFReader = new FileReader()
+        oFReader.readAsDataURL(document.getElementById('dogImg').files[0])
+        oFReader.onload = function (oFREvent) {
+          document.getElementById('uploadPreview').src = oFREvent.target.result
+        }
+      }
+    </script>
   </body>
 </html>

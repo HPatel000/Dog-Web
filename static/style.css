@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +7,85 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Carter One';
+  text-align: center;
+  background-color: hsl(30, 100%, 95%);
 }
 
 h1 {
-  margin: 2rem 3rem;
+  margin: 3rem 0rem;
+  font-family: 'Carter One';
+  letter-spacing: 0.1em;
+  text-shadow: 3px 3px 0px hsl(30, 100%, 20%);
+  font-size: 5rem;
+  color: hsl(30, 100%, 50%);
 }
-h3,
-input {
-  margin: 1rem 3rem;
+
+h3 {
+  margin: 2rem 0rem;
+  font-size: 1.5rem;
+  color: hsl(30, 100%, 20%);
+}
+
+div {
+  position: relative;
+  padding: 5px 10px;
+  margin: auto;
+  width: max-content;
+  background: hsl(30, 100%, 50%);
+  border: 3px solid hsl(30, 100%, 20%);
+  color: hsl(30, 100%, 20%);
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+div:hover {
+  background-color: hsl(30, 100%, 20%);
+  color: hsl(30, 100%, 50%);
+}
+
+.hide_file {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  height: 100%;
+  font-size: 2rem;
+  width: 100%;
+}
+
+img {
+  max-height: 15rem;
+  max-width: 20rem;
+  object-fit: contain;
+}
+
+#prediction_label {
+  font-size: 3rem;
+  margin: 4rem;
+  color: hsl(30, 100%, 20%);
+  text-shadow: 2px 2px 0px hsl(30, 100%, 50%);
+}
+
+.btn {
+  padding: 1rem 3rem;
+  margin: auto;
+  width: max-content;
+  background: hsl(30, 100%, 20%);
+  font-size: 1rem;
+  font-family: 'Carter One';
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.btn:hover {
+  background-color: hsl(30, 100%, 30%);
 }
